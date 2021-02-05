@@ -1,0 +1,24 @@
+---
+spring:
+  application:
+    name: ocrp-SiteManagement
+  main:
+    allow-bean-definition-overriding: true
+  data:
+    cassandra:
+      contact-points: localhost
+      username:
+      password:
+      local-datacenter: datacenter1
+      keyspace-name: nisum
+      native_transport_port: 9042
+      keyspace-replication-strategy: "{ 'class':'SimpleStrategy', 'replication_factor': '1' }"
+      max:
+        connection:
+          local: 3
+      core:
+        connection:
+          local: 1
+      connect-timeout: 12000
+server:
+  port: 9081
